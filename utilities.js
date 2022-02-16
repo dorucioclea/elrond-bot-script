@@ -4,6 +4,7 @@ const BigNumber = require("bignumber.js");
 const getHexValue = (value, pow = 18) => {
   let hexValue = BigNumber(value)
     .multipliedBy(BigNumber(10).pow(pow))
+    .integerValue()
     .toString(16);
   if (hexValue.length % 2 != 0) {
     hexValue = "0" + hexValue;
